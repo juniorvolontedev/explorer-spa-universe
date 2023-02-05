@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #000000;
+  --txt-color: #ffffff;
+  --txt-color-secodary: var(--txt-color-secodary);
+  --menu-color: #c4c4cc;
+  --menu-color-active: #ffffff;
+  --btn-hover-color: #02799d;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--txt-color);
+  padding: 0 7.2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.home {
+  background-image: url(../images/home.png);
+}
+
+body.universe {
+  background-image: url(../images/universe.png);
+}
+
+body.explore {
+  background-image: url(../images/explore.png);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+nav a {
+  font-size: 2.1rem;
+  color: var(--menu-color);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: var(--menu-color-active);
+}
+
+nav a.active {
+  color: var(--menu-color-active);
+  font-weight: 700;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body:not(.home) #app {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 6.3rem;
+  padding: 0 3rem;
+}
+
+body:not(.home) .page {
+  max-width: 64.8rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 125%;
+  color: var(--txt-color-secodary);
+  margin-bottom: 2.4rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 160%;
+  color: var(--txt-color-secodary);
+}
+
+.btn {
+  display: table;
+  padding: 1.2rem 3.2rem;
+  border: solid 1px var(--txt-color);
+  color: var(--txt-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  transition: all ease 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--txt-color);
+  color: var(--btn-hover-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 2rem;
+    text-align: center;
+  }
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    gap: 2rem;
+  }
+  nav a {
+    font-size: 1.6rem;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}
